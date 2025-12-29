@@ -10,7 +10,6 @@ test.describe("Registration — email field validation", () => {
     await heroSection.locator("text=Sign up").click();
 
     const modal = page.locator(".modal-content");
-    await expect(modal).toHaveClass(/modal-content/);
 
     const emailInput = modal.locator("#signupEmail");
     await emailInput.click();

@@ -10,14 +10,14 @@ test.describe("Registration — Last name field validation", () => {
     await heroSection.locator("text=Sign up").click();
 
     const modal = page.locator(".modal-content");
-    await expect(modal).toHaveClass(/modal-content/);
 
     const lastNameInput = modal.locator("#signupLastName");
 
     await lastNameInput.fill("k");
     await lastNameInput.blur();
+
     await expect(
-      page.locator("text=Last name has to be from 2 to 20 characters long"),
+      modal.getByText("Last name has to be from 2 to 20 characters long"),
     ).toBeVisible();
 
     await lastNameInput.fill("ThisNameIsWayTooLongToBeValid");

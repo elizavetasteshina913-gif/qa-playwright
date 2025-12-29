@@ -10,12 +10,11 @@ test.describe("Registration — Password field validation", () => {
     await heroSection.locator("text=Sign up").click();
 
     const modal = page.locator(".modal-content");
-    await expect(modal).toHaveClass(/modal-content/);
 
     const passwordInput = modal.locator("#signupPassword");
     await passwordInput.click();
     await passwordInput.blur();
 
-    await expect(modal.locator("text=Password required")).toBeVisible();
+    await expect(modal.getByText("Password required")).toBeVisible();
   });
 });

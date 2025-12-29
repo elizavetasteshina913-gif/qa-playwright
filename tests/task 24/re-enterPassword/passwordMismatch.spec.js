@@ -5,8 +5,6 @@ test.describe("Registration — Re-enter password validation", () => {
     await page.goto("/");
 
     await page.locator(".section.hero").locator("text=Sign up").click();
-
-    await expect(page.locator(".modal-content")).toHaveClass(/modal-content/);
   });
 
   test("should show error when passwords do not match", async ({ page }) => {

@@ -5,8 +5,6 @@ test.describe("Registration — disabled REGISTER", () => {
     await page.goto("/");
 
     await page.locator(".section.hero").locator("text=Sign up").click();
-
-    await expect(page.locator(".modal-content")).toBeVisible();
   });
 
   test("button is disabled if data incorrect", async ({ page }) => {
