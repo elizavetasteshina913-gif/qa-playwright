@@ -6,8 +6,8 @@ test.describe("Registration — Password field validation", () => {
 
     await page.locator(".section.hero").locator("text=Sign up").click();
 
-    const modal = page.locator(".modal-content");
-    await expect(modal).toHaveClass(/modal-content/);
+    // const modal = page.locator(".modal-content");
+    // await expect(modal).toHaveClass(/modal-content/);
   });
 
   const testCases = [

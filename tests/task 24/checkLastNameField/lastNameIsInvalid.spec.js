@@ -10,13 +10,12 @@ test.describe("Registration — Last name field validation", () => {
     await heroSection.locator("text=Sign up").click();
 
     const modal = page.locator(".modal-content");
-    await expect(modal).toHaveClass(/modal-content/);
 
-    const LastnameInput = modal.locator("#signupLastName");
-    await LastnameInput.click();
-    await LastnameInput.fill("8497_urjrek");
-    await LastnameInput.blur();
+    const lastNameInput = modal.locator("#signupLastName");
+    await lastNameInput.click();
+    await lastNameInput.fill("8497_urjrek");
+    await lastNameInput.blur();
 
-    await expect(page.locator("text=Last name is invalid")).toBeVisible();
+    await expect(modal.getByText("Last name is invalid")).toBeVisible();
   });
 });

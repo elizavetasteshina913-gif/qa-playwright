@@ -10,13 +10,12 @@ test.describe("Registration — Last name field validation", () => {
     await heroSection.locator("text=Sign up").click();
 
     const modal = page.locator(".modal-content");
-    await expect(modal).toHaveClass(/modal-content/);
 
     const lastNameInput = modal.locator("#signupLastName");
     await lastNameInput.click();
     await lastNameInput.blur();
 
-    await expect(modal.locator("text=Last name required")).toBeVisible({
+    await expect(modal.getByText("Last name required")).toBeVisible({
       timeout: 7000,
     });
   });

@@ -10,17 +10,15 @@ test.describe("Registration — Email field validation", () => {
     await heroSection.locator("text=Sign up").click();
 
     const modal = page.locator(".modal-content");
-    await expect(modal).toHaveClass(/modal-content/);
+    const emailInput = modal.locator("#signupEmail");
 
-    const EmailInput = modal.locator("#signupEmail");
-
-    await EmailInput.fill("k");
-    await EmailInput.blur();
+    await emailInput.fill("k");
+    await emailInput.blur();
     await expect(page.locator("text=Email is incorrect")).toBeVisible();
 
-    await EmailInput.fill("ThisNameIsWayTooLongToBeValid");
-    await EmailInput.blur();
+    await emailInput.fill("ThisNameIsWayTooLongToBeValid");
+    await emailInput.blur();
 
-    await expect(EmailInput).toHaveCSS("border-color", "rgb(220, 53, 69)");
+    await expect(emailInput).toHaveCSS("border-color", "rgb(220, 53, 69)");
   });
 });
