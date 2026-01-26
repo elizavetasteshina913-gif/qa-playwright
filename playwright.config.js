@@ -13,12 +13,13 @@ import { defineConfig, devices } from "@playwright/test";
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
-  // testDir: "./tests",
-  testMatch: /\/tests\/.*\.spec\.js/,
-  globalSetup: "./global-setup",
-  globalTeardown: "./globalTeardown",
+  testDir: "./tests",
+  // testMatch: /\/tests\/.*\.(spec|test)\.js/,
+
+  // globalSetup: "./global-setup",
+  // globalTeardown: "./globalTeardown",
   // testIgnore: /.*\.*.ignore.spec\.js/,
-  grep: /@my-label/,
+  // grep: /@my-label/,
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -71,10 +72,10 @@ export default defineConfig({
       },
     },
     {
-      name: "regression",
-      dependencies: ["setup"], //чтобы проджект запустился все его зависимости должны пройти успешно
-      grepInvert: /@my-label/,
-      use: { ...devices["Desktop Chrome"] },
+      // name: "regression",
+      // dependencies: ["setup"], //чтобы проджект запустился все его зависимости должны пройти успешно
+      // grepInvert: /@my-label/,
+      // use: { ...devices["Desktop Chrome"] },
     },
     // projects: [
     //   {
