@@ -6,7 +6,7 @@ test.describe("Signup tests", () => {
     await page.goto("/");
   });
 
-  test.only("Signup with valid credentials (POM)", async ({ page }) => {
+  test("Signup with valid credentials (POM)", async ({ page }) => {
     const password = `Qwerty${faker.number.int({ min: 100, max: 999 })}`;
     const userData = {
       name: faker.person.firstName(),

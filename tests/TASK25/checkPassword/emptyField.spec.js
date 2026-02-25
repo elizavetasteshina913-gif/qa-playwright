@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { RegistrationPage } from "../../auth/registration.page.js";
+import { RegistrationPage } from "../../../auth/registration.page.js";
 
 test.describe("Registration — Password field validation", () => {
   let registration;

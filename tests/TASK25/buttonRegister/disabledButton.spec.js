@@ -1,5 +1,6 @@
 import { test } from "@playwright/test";
-import { RegistrationPage } from "../../auth/registration.page.js";
+// import { RegistrationPage } from "../../auth/registration.page.js";
+import { RegistrationPage } from "../../../auth/registration.page.js";
 
 test("Last name field red if empty", async ({ page }) => {
   const registration = new RegistrationPage(page);
@@ -9,4 +10,5 @@ test("Last name field red if empty", async ({ page }) => {
   await registration.lastName.blur();
 
   await registration.expectRedBorder(registration.lastName);
+  await page.pause();
 });

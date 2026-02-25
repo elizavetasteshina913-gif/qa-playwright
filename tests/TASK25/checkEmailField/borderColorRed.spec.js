@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { RegistrationPage } from "../../auth/registration.page.js";
+import { RegistrationPage } from "../../../auth/registration.page.js";
 
 test("Email border is red for invalid values", async ({ page }) => {
   const registration = new RegistrationPage(page);

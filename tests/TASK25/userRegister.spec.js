@@ -9,7 +9,7 @@ test.describe("Registration — successful path", () => {
     await registration.open();
   });
 
-  test("should successfully register a new user", async () => {
+  test.only("should successfully register a new user", async () => {
     await registration.fillName("Liza");
     await registration.fillLastName("test");
     await registration.fillEmail("98aqaaelizavetasteshina913@gmail.com");
@@ -23,5 +23,6 @@ test.describe("Registration — successful path", () => {
     await expect(
       registration.page.locator("text=Registration complete"),
     ).toBeVisible();
+    // await page.pause();
   });
 });
